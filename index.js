@@ -4,7 +4,8 @@ require('dotenv').config({
 })
 
 console.log(__dirname)
-console.log(process.env)
+console.log(process.env.EXPRESS_PORT)
+console.log(process.env.ENV)
 
 const { parentPort } = require('worker_threads')
 const express = require('express')
