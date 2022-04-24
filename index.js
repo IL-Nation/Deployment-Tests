@@ -1,6 +1,10 @@
 require('dotenv').config({
     override: true,
+    path: './.env',
 })
+
+console.log(__dirname)
+console.log(process.env)
 
 const { parentPort } = require('worker_threads')
 const express = require('express')
