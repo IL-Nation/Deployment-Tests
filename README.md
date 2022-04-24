@@ -1,4 +1,3 @@
 # Deployment-Tests
 
-Ceci est dans la v0.0.2
-J'aime les frites
+Je ne sais pas quoi commit
