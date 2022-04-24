@@ -1,4 +1,6 @@
-require('dotenv').config()
+require('dotenv').config({
+    override: true,
+})
 
 const { parentPort } = require('worker_threads')
 const express = require('express')
