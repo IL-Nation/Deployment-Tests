@@ -28,5 +28,5 @@ app.listen(process.env.EXPRESS_PORT, () => {
 */
 
 setInterval(() => {
-    console.log('WORKER : ' + process.env.toString())
+    console.log('WORKER => ' + process.env.toString())
 }, 1000)
