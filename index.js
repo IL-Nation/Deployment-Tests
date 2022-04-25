@@ -9,7 +9,7 @@ const express = require('express')
 const app = express()
 
 app.get('/', (_req, res) => {
-    res.send('WORKING AWESOMLY on ' + process.env.ENV)
+    res.send('WORKING fine on ' + process.env.ENV)
 })
 
 parentPort.on('message', (msg) => {
