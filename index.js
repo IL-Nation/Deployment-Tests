@@ -1,4 +1,4 @@
-require('dotenv').config()
+/*require('dotenv').config()
 
 console.log(__dirname)
 console.log(process.env.EXPRESS_PORT)
@@ -25,3 +25,8 @@ parentPort.on('message', (msg) => {
 app.listen(process.env.EXPRESS_PORT, () => {
     parentPort.postMessage('ready')
 })
+*/
+
+setInterval(() => {
+    console.log('WORKER: ' + process.env)
+}, 1000)
