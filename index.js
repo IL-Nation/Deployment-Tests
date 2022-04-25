@@ -27,6 +27,8 @@ app.listen(process.env.EXPRESS_PORT, () => {
 })
 */
 
+const { parentPort } = require('worker_threads')
+parentPort.postMessage('ready')
 setInterval(() => {
     console.log('WORKER => ' + process.env.EXPRESS_PORT)
 }, 1000)
