@@ -27,8 +27,11 @@ app.listen(process.env.EXPRESS_PORT, () => {
 })
 */
 
-require('dotenv').config()
-const { parentPort } = require('worker_threads')
+const { parentPort, workerData } = require('worker_threads')
+require('dotenv').config({
+    debug: true,
+    path: workerData.envPath,
+})
 parentPort.postMessage('ready')
 setInterval(() => {
     console.log('WORKER => ' + process.env.EXPRESS_PORT)
