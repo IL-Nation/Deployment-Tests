@@ -1,5 +1,5 @@
-/*require('dotenv').config()
-
+require('dotenv').config()
+/*
 console.log(__dirname)
 console.log(process.env.EXPRESS_PORT)
 console.log(process.env)
