@@ -4,7 +4,6 @@ require('dotenv').config({
     path: workerData.envPath,
 })
 
-const { parentPort } = require('worker_threads')
 const express = require('express')
 
 const app = express()
