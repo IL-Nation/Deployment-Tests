@@ -1,8 +1,8 @@
-/*require('dotenv').config()
+const { parentPort, workerData } = require('worker_threads')
 
-console.log(__dirname)
-console.log(process.env.EXPRESS_PORT)
-console.log(process.env)
+require('dotenv').config({
+    path: workerData.envPath,
+})
 
 const { parentPort } = require('worker_threads')
 const express = require('express')
@@ -14,6 +14,7 @@ app.get('/', (_req, res) => {
 })
 
 parentPort.on('message', (msg) => {
+    console.log(msg)
     if (msg === 'stop') {
         require('fs').writeFileSync(
             '../../STOP+' + process.env.ENV + '.txt',
@@ -25,14 +26,3 @@ parentPort.on('message', (msg) => {
 app.listen(process.env.EXPRESS_PORT, () => {
     parentPort.postMessage('ready')
 })
-*/
-
-const { parentPort, workerData } = require('worker_threads')
-require('dotenv').config({
-    debug: true,
-    path: workerData.envPath,
-})
-parentPort.postMessage('ready')
-setInterval(() => {
-    console.log('WORKER => ' + process.env.EXPRESS_PORT)
-}, 1000)
