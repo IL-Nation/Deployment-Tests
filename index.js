@@ -9,21 +9,15 @@ const express = require('express')
 const app = express()
 
 app.get('/', (_req, res) => {
-    res.send('WORKING on ' + process.env.ENV)
+    res.send('WORKING AWESOMLY on ' + process.env.ENV)
 })
 
 parentPort.on('message', (msg) => {
-    console.log(msg)
     if (msg === 'stop') {
-        require('fs').writeFileSync(
-            '../../STOP+' + process.env.ENV + '.txt',
-            'STOPPED'
-        )
+        // Do Stop Stuff
     }
 })
 
 app.listen(process.env.EXPRESS_PORT, () => {
     parentPort.postMessage('ready')
 })
-
-// Useless Comment
